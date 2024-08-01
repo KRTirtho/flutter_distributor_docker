@@ -1,4 +1,4 @@
-FROM --platform=linux/arm64 ubuntu:22.04
+FROM ubuntu:22.04
 
 ARG FLUTTER_VERSION
 
