@@ -8,6 +8,7 @@ RUN apt-get clean &&\
   rm -rf /var/lib/apt/lists/*
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain stable -y
+RUN . "$HOME/.cargo/env"
 
 WORKDIR /home/flutter
 
