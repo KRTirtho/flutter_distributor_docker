@@ -8,7 +8,6 @@ RUN apt-get clean &&\
   rm -rf /var/lib/apt/lists/*
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain stable -y
-RUN . "$HOME/.cargo/env"
 
 WORKDIR /home/flutter
 
@@ -21,6 +20,7 @@ RUN flutter-sdk/bin/flutter config --no-analytics
 ENV PATH="$PATH:/home/flutter/flutter-sdk/bin"
 ENV PATH="$PATH:/home/flutter/flutter-sdk/bin/cache/dart-sdk/bin"
 ENV PATH="$PATH:/home/flutter/.pub-cache/bin"
+ENV PATH="$PATH:$HOME/.cargo/env"
 ENV PUB_CACHE="/home/flutter/.pub-cache"
 
 RUN dart pub global activate flutter_distributor
