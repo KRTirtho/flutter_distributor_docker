@@ -16,6 +16,8 @@ RUN mkdir -p $RUSTUP_HOME $CARGO_HOME && \
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain stable -y
 
+RUN rustup --version
+
 WORKDIR /home/flutter
 
 RUN git clone https://github.com/flutter/flutter.git -b ${FLUTTER_VERSION} --single-branch flutter-sdk
